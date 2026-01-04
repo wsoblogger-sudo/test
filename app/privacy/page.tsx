@@ -1,21 +1,19 @@
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
+import PageHero from '@/components/sections/PageHero';
 
 export default function PrivacyPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-32 pb-24">
+      <PageHero 
+        title="Privacy Policy"
+        subtitle="🔒 Privacy"
+        description={`Last updated: ${new Date().toLocaleDateString()}`}
+      />
+      <main className="min-h-screen pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-white mb-4">
-                Privacy Policy
-              </h1>
-              <p className="text-gray-400">
-                Last updated: {new Date().toLocaleDateString()}
-              </p>
-            </div>
 
             <div className="glass rounded-2xl p-8 space-y-8">
               <section>

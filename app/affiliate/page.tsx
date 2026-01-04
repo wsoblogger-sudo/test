@@ -1,22 +1,20 @@
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
+import PageHero from '@/components/sections/PageHero';
 
 export default function AffiliatePage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-32 pb-24">
+      <PageHero 
+        title="Affiliate Program"
+        subtitle="💰 Earn With Us"
+        description="Earn commissions by referring users to AIPROFITGEN software"
+      />
+      <main className="min-h-screen pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-white mb-4">
-                Affiliate Program
-              </h1>
-              <p className="text-xl text-gray-400">
-                Earn commissions by referring users to AIPROFITGEN software
-              </p>
-            </div>
 
             <div className="glass rounded-3xl p-12 mb-12 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-cyan-600/20"></div>

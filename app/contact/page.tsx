@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
+import PageHero from '@/components/sections/PageHero';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -27,17 +28,14 @@ export default function ContactPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-32 pb-24">
+      <PageHero 
+        title="Contact Us"
+        subtitle="📧 Get In Touch"
+        description="Get in touch with our support team"
+      />
+      <main className="min-h-screen pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-white mb-4">
-                Contact Us
-              </h1>
-              <p className="text-xl text-gray-400">
-                Get in touch with our support team
-              </p>
-            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">

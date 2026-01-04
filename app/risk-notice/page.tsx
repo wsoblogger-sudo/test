@@ -1,21 +1,19 @@
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
+import PageHero from '@/components/sections/PageHero';
 
 export default function RiskNoticePage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-32 pb-24">
+      <PageHero 
+        title="Risk Notice"
+        subtitle="⚠️ Important"
+        description="Important risk disclosure for AIPROFITGEN users"
+      />
+      <main className="min-h-screen pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-white mb-4">
-                Risk Notice
-              </h1>
-              <p className="text-gray-400">
-                Important risk disclosure for AIPROFITGEN users
-              </p>
-            </div>
 
             <div className="glass rounded-2xl p-8 space-y-8">
               <div className="p-6 bg-red-500/10 border border-red-500/30 rounded-xl">

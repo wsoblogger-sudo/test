@@ -110,25 +110,23 @@ export default function SoftwarePageTemplate({
           <section className="py-24">
             <div className="container mx-auto px-4 lg:px-8">
               <h2 className="text-4xl font-bold text-white text-center mb-16">Software Demo Videos</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className={`grid grid-cols-1 ${videos.length === 1 ? 'max-w-5xl' : 'lg:grid-cols-2 max-w-7xl'} gap-8 mx-auto`}>
                 {videos.map((video, index) => {
                   const videoId = video.url.includes('youtu.be') 
                     ? video.url.split('/').pop()?.split('?')[0]
                     : new URL(video.url).searchParams.get('v');
                   
                   return (
-                    <div key={index} className="glass rounded-2xl p-4">
-                      <h3 className="text-lg font-semibold text-white mb-4">{video.title}</h3>
-                      <div className="aspect-video rounded-xl overflow-hidden">
+                    <div key={index} className="glass glass-hover rounded-2xl p-6">
+                      <h3 className="text-xl font-bold text-white mb-4 text-center">{video.title}</h3>
+                      <div className="relative" style={{ paddingBottom: '56.25%' }}>
                         <iframe
-                          width="100%"
-                          height="100%"
                           src={`https://www.youtube.com/embed/${videoId}`}
                           title={video.title}
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
-                          className="w-full h-full"
+                          className="absolute top-0 left-0 w-full h-full rounded-xl"
                         />
                       </div>
                     </div>
