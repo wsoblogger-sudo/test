@@ -4,6 +4,8 @@ import Navigation from '../layout/Navigation';
 import Footer from '../layout/Footer';
 import Button from '../ui/Button';
 import TestimonialCard from '../ui/TestimonialCard';
+import SoftwareHero from './SoftwareHero';
+import LiveActivity from './LiveActivity';
 import { useState } from 'react';
 
 interface Feature {
@@ -37,6 +39,7 @@ interface SoftwarePageProps {
   tagline: string;
   description: string;
   icon: string;
+  image?: string;
   features: Feature[];
   videoUrl?: string;
   videos?: Video[];
@@ -50,6 +53,7 @@ export default function SoftwarePageTemplate({
   tagline,
   description,
   icon,
+  image,
   features,
   videoUrl,
   videos,
@@ -62,34 +66,14 @@ export default function SoftwarePageTemplate({
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-20">
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
-          </div>
-
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <div className="inline-flex items-center justify-center w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-600 to-purple-900 mb-6 text-5xl animate-float">
-                {icon}
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                {name}
-              </h1>
-              <p className="text-2xl text-purple-300 mb-6">{tagline}</p>
-              <p className="text-xl text-gray-400 mb-10">{description}</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button href="/signup" variant="primary" size="lg">
-                  Buy Software
-                </Button>
-                <Button href="/signup" variant="outline" size="lg">
-                  Create Account
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+      <SoftwareHero 
+        name={name}
+        tagline={tagline}
+        description={description}
+        icon={icon}
+        image={image}
+      />
+      <main className="min-h-screen">
 
         <section className="py-24">
           <div className="container mx-auto px-4 lg:px-8">
@@ -105,6 +89,8 @@ export default function SoftwarePageTemplate({
             </div>
           </div>
         </section>
+
+        <LiveActivity />
 
         {videos && videos.length > 0 && (
           <section className="py-24">

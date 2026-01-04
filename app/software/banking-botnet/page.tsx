@@ -7,6 +7,7 @@ export default function BankingBotNetPage() {
       tagline="Enterprise Banking Automation"
       description="Enterprise-grade automated banking operations with multi-platform integration, secure transaction management, and intelligent financial workflow automation."
       icon="🏦"
+      image="https://aiprofitgen.com/assets/images/banking-botnet-596x388.png"
       features={[
         {
           title: 'Multi-Platform',

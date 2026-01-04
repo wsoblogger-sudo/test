@@ -7,6 +7,7 @@ export default function CashflowToolsPage() {
       tagline="Advanced Cash Flow Optimization"
       description="AI-powered cash flow optimization and automated revenue generation tools designed for consistent income streams and financial automation."
       icon="💰"
+      image="https://aiprofitgen.com/assets/images/cashflow-758x476.jpg"
       features={[
         {
           title: 'AI Automation',

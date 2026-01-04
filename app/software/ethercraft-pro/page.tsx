@@ -7,6 +7,7 @@ export default function EthercraftProPage() {
       tagline="Ethereum Trading Automation"
       description="Ethereum-focused trading automation featuring AI-driven strategy optimization, smart contract integration, and advanced technical analysis for ETH markets."
       icon="⚡"
+      image="https://aiprofitgen.com/assets/images/ethercraft-pro-800x532.png"
       features={[
         {
           title: 'ETH Optimization',

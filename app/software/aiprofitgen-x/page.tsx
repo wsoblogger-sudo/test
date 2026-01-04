@@ -7,6 +7,7 @@ export default function AiProfitgenXPage() {
       tagline="Premium All-In-One Platform"
       description="Premium all-in-one automated income platform combining multiple strategies with advanced AI decision-making, comprehensive automation, and institutional-grade features."
       icon="🚀"
+      image="https://aiprofitgen.com/assets/images/aiprofitgen-x-preview-min.png-816x511.png"
       features={[
         {
           title: 'Unified Platform',

@@ -7,6 +7,7 @@ export default function USDTRexProPage() {
       tagline="USDT Arbitrage Automation"
       description="Sophisticated USDT arbitrage automation with intelligent market scanning, price difference detection, and risk-managed execution protocols across multiple exchanges."
       icon="💎"
+      image="https://aiprofitgen.com/assets/images/usdtrex-pro-760x482.png"
       features={[
         {
           title: 'Market Scanning',

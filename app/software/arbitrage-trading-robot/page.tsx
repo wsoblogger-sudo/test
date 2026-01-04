@@ -7,6 +7,7 @@ export default function ArbitrageTradingRobotPage() {
       tagline="High-Frequency Arbitrage System"
       description="High-frequency arbitrage detection and execution system with real-time market analysis, cross-exchange trading, and automated profit capture mechanisms."
       icon="🤖"
+      image="https://aiprofitgen.com/assets/images/arbitrage-trading-596x388.png"
       features={[
         {
           title: 'Real-Time Detection',
