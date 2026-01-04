@@ -1,31 +1,83 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 export default function TrustProof() {
-  const proofs = [
+  const [transactions, setTransactions] = useState([
     {
       type: 'Transaction',
-      hash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
+      hash: '0x7f9fade1c0...b11a91385',
       amount: '$1,247.50',
       status: 'Confirmed',
     },
     {
       type: 'Transaction',
-      hash: '0x3c7e9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91',
+      hash: '0x3c7e9fade1...7b11a91',
       amount: '$892.30',
       status: 'Confirmed',
     },
     {
       type: 'Transaction',
-      hash: '0x9a2fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
+      hash: '0x9a2fade1c0...2eb7b11a91385',
       amount: '$2,156.80',
       status: 'Confirmed',
     },
-  ];
+  ]);
 
-  const userEarnings = [
-    { user: 'User #4892', amount: '+$1,845.20', period: 'Last 30 days' },
-    { user: 'User #7231', amount: '+$3,294.50', period: 'Last 30 days' },
-    { user: 'User #2108', amount: '+$987.40', period: 'Last 30 days' },
-    { user: 'User #9456', amount: '+$2,621.90', period: 'Last 30 days' },
-  ];
+  const [userEarnings, setUserEarnings] = useState([
+    { user: 'Cashflow Tools User', amount: '+$1,845.20', period: '2 hours ago' },
+    { user: 'USDTRex Pro User', amount: '+$3,294.50', period: '5 hours ago' },
+    { user: 'Ethercraft Pro User', amount: '+$987.40', period: '1 hour ago' },
+    { user: 'AiProfitgen X User', amount: '+$2,621.90', period: '3 hours ago' },
+  ]);
+
+  useEffect(() => {
+    const transactionInterval = setInterval(() => {
+      const randomAmount = (Math.random() * 5000 + 200).toFixed(2);
+      const randomHash = '0x' + Math.random().toString(36).substring(2, 12) + '...' + Math.random().toString(36).substring(2, 12);
+      
+      setTransactions(prev => {
+        const newTransactions = [...prev];
+        newTransactions[Math.floor(Math.random() * 3)] = {
+          type: 'Transaction',
+          hash: randomHash,
+          amount: `$${randomAmount}`,
+          status: 'Confirmed',
+        };
+        return newTransactions;
+      });
+    }, 8000);
+
+    const earningsInterval = setInterval(() => {
+      const softwareNames = [
+        'Cashflow Tools User',
+        'USDTRex Pro User',
+        'Ethercraft Pro User',
+        'Banking BotNet User',
+        'Arbitrage Trading User',
+        'AiProfitgen X User',
+      ];
+      
+      const randomAmount = (Math.random() * 99800 + 200).toFixed(2);
+      const hoursAgo = Math.floor(Math.random() * 12) + 1;
+      const period = hoursAgo === 1 ? '1 hour ago' : `${hoursAgo} hours ago`;
+      
+      setUserEarnings(prev => {
+        const newEarnings = [...prev];
+        newEarnings[Math.floor(Math.random() * 4)] = {
+          user: softwareNames[Math.floor(Math.random() * softwareNames.length)],
+          amount: `+$${randomAmount}`,
+          period: period,
+        };
+        return newEarnings;
+      });
+    }, 6000);
+
+    return () => {
+      clearInterval(transactionInterval);
+      clearInterval(earningsInterval);
+    };
+  }, []);
 
   return (
     <section className="py-24 relative">
@@ -43,7 +95,7 @@ export default function TrustProof() {
           <div>
             <h3 className="text-2xl font-bold text-white mb-6">Recent Transactions</h3>
             <div className="space-y-4">
-              {proofs.map((proof, index) => (
+              {transactions.map((proof, index) => (
                 <div key={index} className="glass glass-hover rounded-xl p-6">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center space-x-2">

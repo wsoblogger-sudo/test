@@ -1,6 +1,43 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import StatCard from '../ui/StatCard';
 
 export default function EarningsVisualization() {
+  const [activeAutomations, setActiveAutomations] = useState(82538);
+  const [totalTransactions, setTotalTransactions] = useState(2400000);
+
+  useEffect(() => {
+    const automationInterval = setInterval(() => {
+      setActiveAutomations(prev => prev + 1);
+    }, 5000);
+
+    const transactionInterval = setInterval(() => {
+      setTotalTransactions(prev => prev + Math.floor(Math.random() * 100) + 50);
+    }, 3000);
+
+    return () => {
+      clearInterval(automationInterval);
+      clearInterval(transactionInterval);
+    };
+  }, []);
+
+  const formatNumber = (num: number) => {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + 'M';
+    }
+    return num.toLocaleString();
+  };
+
+  const allSoftware = [
+    { name: 'Cashflow Tools', status: 'operational', uptime: '99.99%' },
+    { name: 'USDTRex Pro', status: 'operational', uptime: '99.99%' },
+    { name: 'Ethercraft Pro', status: 'operational', uptime: '99.99%' },
+    { name: 'Banking BotNet', status: 'operational', uptime: '99.99%' },
+    { name: 'Arbitrage Trading Robot', status: 'operational', uptime: '99.99%' },
+    { name: 'AiProfitgen X', status: 'operational', uptime: '99.99%' },
+  ];
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4 lg:px-8">
@@ -15,17 +52,17 @@ export default function EarningsVisualization() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <StatCard 
-            title="Active Automations" 
-            value="15,847" 
+            title="Active Software" 
+            value={formatNumber(activeAutomations)} 
             trend="up"
-            animated 
+            animated={false}
           />
           <StatCard 
             title="Total Transactions" 
-            value="2.4M" 
+            value={formatNumber(totalTransactions)} 
             suffix="+"
             trend="up"
-            animated 
+            animated={false}
           />
           <StatCard 
             title="Average Efficiency" 
@@ -53,22 +90,17 @@ export default function EarningsVisualization() {
           </div>
 
           <div className="space-y-4">
-            {[
-              { label: 'Arbitrage Detection', value: 87, color: 'purple' },
-              { label: 'Trade Execution', value: 92, color: 'cyan' },
-              { label: 'Risk Management', value: 95, color: 'green' },
-              { label: 'Portfolio Optimization', value: 88, color: 'blue' },
-            ].map((metric) => (
-              <div key={metric.label}>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm text-gray-400">{metric.label}</span>
-                  <span className="text-sm text-white font-semibold">{metric.value}%</span>
+            {allSoftware.map((software) => (
+              <div key={software.name} className="flex items-center justify-between p-4 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-colors">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                  <span className="text-sm text-white font-medium">{software.name}</span>
                 </div>
-                <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                  <div 
-                    className={`h-full bg-gradient-to-r from-${metric.color}-500 to-${metric.color}-600 rounded-full transition-all duration-1000`}
-                    style={{ width: `${metric.value}%` }}
-                  ></div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-xs text-gray-400">Uptime: {software.uptime}</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-green-500/20 text-green-400 font-semibold">
+                    {software.status}
+                  </span>
                 </div>
               </div>
             ))}

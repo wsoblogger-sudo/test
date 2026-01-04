@@ -42,12 +42,12 @@ export default function SoftwareCard({ name, description, icon, earnings, href, 
         <p className="text-gray-400 text-sm leading-relaxed mb-4">{description}</p>
 
         {earnings && (
-          <div className="mb-4 p-4 rounded-lg bg-purple-500/10 border border-purple-500/30">
+          <div className="mb-4 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
             <div className="flex items-center justify-between">
-              <span className="text-gray-400 text-sm">Performance Indicator</span>
+              <span className="text-gray-400 text-sm">Server Uptime</span>
               <span className="text-green-400 text-sm font-semibold flex items-center">
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 {earnings}
               </span>
