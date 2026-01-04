@@ -29,7 +29,9 @@ export default function EthercraftProPage() {
           icon: '⛽',
         },
       ]}
-      videoUrl="/videos/ethercraft-pro-demo.mp4"
+      videos={[
+        { url: 'https://youtu.be/rlgEm83TkpQ', title: 'EtherCraft Pro Demo' },
+      ]}
       gallery={[
         'ETH Dashboard',
         'Trading Interface',

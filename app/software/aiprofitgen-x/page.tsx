@@ -29,7 +29,12 @@ export default function AiProfitgenXPage() {
           icon: '👥',
         },
       ]}
-      videoUrl="/videos/aiprofitgen-x-demo.mp4"
+      videos={[
+        { url: 'https://youtu.be/nTS6EBxHGYY', title: 'BTC Trading' },
+        { url: 'https://youtu.be/qNbyjr2_wEE', title: 'LTC Trading' },
+        { url: 'https://youtu.be/nJ5RkY9CS2E', title: 'ETH Trading' },
+        { url: 'https://youtu.be/LgfvlYdHnas', title: 'USDT Trading' },
+      ]}
       gallery={[
         'Unified Dashboard',
         'AI Control Center',

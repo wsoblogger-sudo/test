@@ -29,7 +29,9 @@ export default function BankingBotNetPage() {
           icon: '✅',
         },
       ]}
-      videoUrl="/videos/banking-botnet-demo.mp4"
+      videos={[
+        { url: 'https://youtu.be/Rq2jIYaG9q0', title: 'Banking BotNet Demo' },
+      ]}
       gallery={[
         'Banking Dashboard',
         'Transaction Manager',

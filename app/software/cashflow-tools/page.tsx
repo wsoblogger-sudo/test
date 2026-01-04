@@ -29,7 +29,13 @@ export default function CashflowToolsPage() {
           icon: '⚙️',
         },
       ]}
-      videoUrl="/videos/cashflow-tools-demo.mp4"
+      videos={[
+        { url: 'https://youtu.be/J4sTdSfK2i0', title: 'Cashflow BTC' },
+        { url: 'https://youtu.be/8eysHxdN_gs', title: 'Cashflow PayPal' },
+        { url: 'https://youtu.be/vNGK6HDN618', title: 'Cashflow Payeer' },
+        { url: 'https://youtu.be/cbDYUjtTnik', title: 'Cashflow Western Union' },
+        { url: 'https://youtu.be/dv9aq8VBlns', title: 'Cashflow Credit Card' },
+      ]}
       gallery={[
         'Dashboard Overview',
         'Analytics Panel',

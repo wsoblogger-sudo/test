@@ -29,7 +29,9 @@ export default function USDTRexProPage() {
           icon: '🔗',
         },
       ]}
-      videoUrl="/videos/usdtrex-pro-demo.mp4"
+      videos={[
+        { url: 'https://youtu.be/QlTgIO-IKRU', title: 'USDTRex Pro Demo' },
+      ]}
       gallery={[
         'Arbitrage Dashboard',
         'Market Scanner',

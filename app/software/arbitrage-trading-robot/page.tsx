@@ -29,7 +29,9 @@ export default function ArbitrageTradingRobotPage() {
           icon: '💰',
         },
       ]}
-      videoUrl="/videos/arbitrage-robot-demo.mp4"
+      videos={[
+        { url: 'https://youtu.be/9TEu9w_zD3w', title: 'Arbitrage Trading Robot Demo' },
+      ]}
       gallery={[
         'Trading Dashboard',
         'Arbitrage Scanner',
