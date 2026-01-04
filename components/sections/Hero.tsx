@@ -1,4 +1,5 @@
 import Button from '../ui/Button';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -11,49 +12,83 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-32">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 glass rounded-full text-sm text-purple-300 mb-8">
-              🤖 AI-Powered Income Systems
-            </span>
-          </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="mb-6">
+                <span className="inline-block px-4 py-2 glass rounded-full text-sm text-purple-300 mb-8">
+                  🤖 AI-Powered Income Systems
+                </span>
+              </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white">Automated </span>
-            <span className="gradient-text">AI-Powered</span>
-            <br />
-            <span className="text-white">Income Systems</span>
-          </h1>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span className="text-white">Automated </span>
+                <span className="gradient-text">AI-Powered</span>
+                <br />
+                <span className="text-white">Income Systems</span>
+              </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            One ecosystem. Multiple automated profit engines. Professional software tools for cryptocurrency arbitrage, trading automation, and passive income generation.
-          </p>
+              <p className="text-xl md:text-2xl text-gray-300 mb-12">
+                One ecosystem. Multiple automated profit engines. Professional software tools for cryptocurrency arbitrage, trading automation, and passive income generation.
+              </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-            <Button href="#software" variant="primary" size="lg">
-              Explore Software
-            </Button>
-            <Button href="/signup" variant="outline" size="lg">
-              Create Account
-            </Button>
-          </div>
+              <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                <Button href="#software" variant="primary" size="lg">
+                  Explore Software
+                </Button>
+                <Button href="/signup" variant="outline" size="lg">
+                  Create Account
+                </Button>
+              </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="glass rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-1">6</div>
-              <div className="text-sm text-gray-400">Software Tools</div>
+              <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
+                <div className="glass rounded-xl p-4">
+                  <div className="text-2xl font-bold text-white mb-1">6</div>
+                  <div className="text-xs text-gray-400">Software Tools</div>
+                </div>
+                <div className="glass rounded-xl p-4">
+                  <div className="text-2xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-xs text-gray-400">Automation</div>
+                </div>
+                <div className="glass rounded-xl p-4">
+                  <div className="text-2xl font-bold text-white mb-1">AI</div>
+                  <div className="text-xs text-gray-400">Powered</div>
+                </div>
+                <div className="glass rounded-xl p-4">
+                  <div className="text-2xl font-bold text-white mb-1">100%</div>
+                  <div className="text-xs text-gray-400">Automated</div>
+                </div>
+              </div>
             </div>
-            <div className="glass rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-1">24/7</div>
-              <div className="text-sm text-gray-400">Automation</div>
-            </div>
-            <div className="glass rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-1">AI</div>
-              <div className="text-sm text-gray-400">Powered</div>
-            </div>
-            <div className="glass rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-1">100%</div>
-              <div className="text-sm text-gray-400">Automated</div>
+
+            <div className="relative">
+              <div className="glass glass-hover rounded-2xl p-4 animate-float">
+                <div className="relative rounded-xl overflow-hidden">
+                  <Image
+                    src="https://aiprofitgen.com/assets/images/cashflow-758x476.jpg"
+                    alt="AI-Powered Cashflow Dashboard"
+                    width={758}
+                    height={476}
+                    className="w-full h-auto"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                </div>
+              </div>
+              
+              <div className="absolute -top-4 -right-4 glass rounded-xl p-4 hidden lg:block">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+                  <span className="text-sm text-white font-semibold">Live System</span>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-4 -left-4 glass rounded-xl p-4 hidden lg:block">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-400">+287%</div>
+                  <div className="text-xs text-gray-400">Performance</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
