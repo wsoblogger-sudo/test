@@ -8,6 +8,7 @@ export default function SoftwareEcosystem() {
       icon: '💰',
       earnings: '+12.5%',
       href: '/software/cashflow-tools',
+      image: 'https://aiprofitgen.com/assets/images/cashflow-758x476.jpg',
     },
     {
       name: 'USDTRex Pro',
@@ -15,6 +16,7 @@ export default function SoftwareEcosystem() {
       icon: '💎',
       earnings: '+18.2%',
       href: '/software/usdtrex-pro',
+      image: 'https://aiprofitgen.com/assets/images/usdtrex-pro-760x482.png',
     },
     {
       name: 'Ethercraft Pro',
@@ -22,6 +24,7 @@ export default function SoftwareEcosystem() {
       icon: '⚡',
       earnings: '+15.8%',
       href: '/software/ethercraft-pro',
+      image: 'https://aiprofitgen.com/assets/images/ethercraft-pro-800x532.png',
     },
     {
       name: 'Banking BotNet',
@@ -29,6 +32,7 @@ export default function SoftwareEcosystem() {
       icon: '🏦',
       earnings: '+10.4%',
       href: '/software/banking-botnet',
+      image: 'https://aiprofitgen.com/assets/images/banking-botnet-596x388.png',
     },
     {
       name: 'Arbitrage Trading Robot',
@@ -36,6 +40,7 @@ export default function SoftwareEcosystem() {
       icon: '🤖',
       earnings: '+22.7%',
       href: '/software/arbitrage-trading-robot',
+      image: 'https://aiprofitgen.com/assets/images/arbitrage-trading-596x388.png',
     },
     {
       name: 'AiProfitgen X',
@@ -43,6 +48,7 @@ export default function SoftwareEcosystem() {
       icon: '🚀',
       earnings: '+25.3%',
       href: '/software/aiprofitgen-x',
+      image: 'https://aiprofitgen.com/assets/images/aiprofitgen-x-preview-min.png-816x511.png',
     },
   ];
 
@@ -51,7 +57,7 @@ export default function SoftwareEcosystem() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Software Ecosystem
+            Our Softwares
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Professional automated income tools powered by advanced AI technology. 

@@ -36,7 +36,7 @@ export default function EarningsVisualization() {
           />
           <StatCard 
             title="Uptime" 
-            value="99.9" 
+            value="99.99" 
             suffix="%"
             trend="neutral"
             animated 

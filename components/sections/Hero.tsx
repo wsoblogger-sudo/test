@@ -41,22 +41,22 @@ export default function Hero() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
-                <div className="glass rounded-xl p-4">
-                  <div className="text-2xl font-bold text-white mb-1">6</div>
-                  <div className="text-xs text-gray-400">Software Tools</div>
+              <div className="grid grid-cols-4 gap-3 max-w-2xl mx-auto lg:mx-0">
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1">6</div>
+                  <div className="text-[10px] md:text-xs text-gray-400">Software Tools</div>
                 </div>
-                <div className="glass rounded-xl p-4">
-                  <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                  <div className="text-xs text-gray-400">Automation</div>
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-[10px] md:text-xs text-gray-400">Automation</div>
                 </div>
-                <div className="glass rounded-xl p-4">
-                  <div className="text-2xl font-bold text-white mb-1">AI</div>
-                  <div className="text-xs text-gray-400">Powered</div>
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1">AI</div>
+                  <div className="text-[10px] md:text-xs text-gray-400">Powered</div>
                 </div>
-                <div className="glass rounded-xl p-4">
-                  <div className="text-2xl font-bold text-white mb-1">100%</div>
-                  <div className="text-xs text-gray-400">Automated</div>
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1">100%</div>
+                  <div className="text-[10px] md:text-xs text-gray-400">Automated</div>
                 </div>
               </div>
             </div>
