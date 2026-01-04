@@ -4,8 +4,11 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { createAccount } from '@/lib/auth';
 
 export default function SignupPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,18 +16,32 @@ export default function SignupPage() {
     confirmPassword: '',
     agreeToTerms: false,
   });
+  const [error, setError] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+    
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
+      setError('Passwords do not match');
       return;
     }
     if (!formData.agreeToTerms) {
-      alert('Please agree to the Terms of Service');
+      setError('Please agree to the Terms of Service');
       return;
     }
-    console.log('Signup submitted:', formData);
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters');
+      return;
+    }
+
+    try {
+      createAccount(formData.email, formData.password, formData.name);
+      alert('Account created successfully!');
+      router.push('/dashboard');
+    } catch {
+      setError('Failed to create account. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +68,11 @@ export default function SignupPage() {
             </div>
 
             <div className="glass rounded-2xl p-8">
+              {error && (
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400">
+                  {error}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">

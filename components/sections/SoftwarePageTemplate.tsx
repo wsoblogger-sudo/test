@@ -55,7 +55,6 @@ export default function SoftwarePageTemplate({
   icon,
   image,
   features,
-  videoUrl,
   videos,
   gallery,
   pricing,

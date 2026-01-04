@@ -4,16 +4,27 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { login } from '@/lib/auth';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const [error, setError] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login submitted:', formData);
+    setError('');
+    
+    const user = login(formData.email, formData.password);
+    if (user) {
+      router.push('/dashboard');
+    } else {
+      setError('Invalid email or password');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +50,11 @@ export default function LoginPage() {
             </div>
 
             <div className="glass rounded-2xl p-8">
+              {error && (
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400">
+                  {error}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">

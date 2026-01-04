@@ -9,17 +9,17 @@ export default function LiveActivity() {
     { country: '🇩🇪', action: 'Position opened', amount: '$3,200', time: '8s ago' },
   ]);
 
-  const countries = ['🇺🇸', '🇬🇧', '🇨🇦', '🇩🇪', '🇦🇺', '🇯🇵', '🇸🇬', '🇦🇪', '🇫🇷', '🇮🇹'];
-  const actions = [
-    'New trade executed',
-    'Arbitrage detected',
-    'Position opened',
-    'Profit captured',
-    'Order filled',
-    'Strategy activated',
-  ];
-
   useEffect(() => {
+    const countries = ['🇺🇸', '🇬🇧', '🇨🇦', '🇩🇪', '🇦🇺', '🇯🇵', '🇸🇬', '🇦🇪', '🇫🇷', '🇮🇹'];
+    const actions = [
+      'New trade executed',
+      'Arbitrage detected',
+      'Position opened',
+      'Profit captured',
+      'Order filled',
+      'Strategy activated',
+    ];
+
     const interval = setInterval(() => {
       const randomCountry = countries[Math.floor(Math.random() * countries.length)];
       const randomAction = actions[Math.floor(Math.random() * actions.length)];
@@ -28,7 +28,7 @@ export default function LiveActivity() {
       const newActivity = {
         country: randomCountry,
         action: randomAction,
-        amount: `$${Number(randomAmount).toLocaleString()}`,
+        amount: `${Number(randomAmount).toLocaleString()}`,
         time: 'Just now',
       };
 
